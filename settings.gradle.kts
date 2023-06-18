@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "NIA"
 include(":app")
 include(":core:common")
-include(":feature")
+//include(":feature")
