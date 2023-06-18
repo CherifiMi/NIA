@@ -1,6 +1,12 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("nowinandroid.android.application")
+    id("nowinandroid.android.application.compose")
+    id("nowinandroid.android.application.flavors")
+    id("nowinandroid.android.application.jacoco")
+    id("nowinandroid.android.hilt")
+    id("jacoco")
+    id("nowinandroid.android.application.firebase")
+    id("com.google.android.gms.oss-licenses-plugin")
 }
 
 android {
@@ -54,4 +60,12 @@ dependencies {
     implementation(libs.androidx.window.manager)
     implementation(libs.androidx.profileinstaller)
     implementation(libs.coil.kt)
+}
+// androidx.test is forcing JUnit, 4.12. This forces it to use 4.13
+configurations.configureEach {
+    resolutionStrategy {
+        force(libs.junit4)
+        // Temporary workaround for https://issuetracker.google.com/174733673
+        force("org.objenesis:objenesis:2.6")
+    }
 }

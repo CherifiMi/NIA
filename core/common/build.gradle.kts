@@ -1,6 +1,7 @@
 plugins {
-    id("com.android.library")
-    alias(libs.plugins.hilt) apply false
+    id("nowinandroid.android.library")
+    id("nowinandroid.android.library.jacoco")
+    id("nowinandroid.android.hilt")
 }
 
 android {
