@@ -2,14 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
-      <module name="NIA.core.data-test" target="18" />
-      <module name="NIA.core.database" target="18" />
-      <module name="NIA.core.datastore" target="18" />
-      <module name="NIA.core.datastore-test" target="18" />
-      <module name="NIA.core.designsystem" target="18" />
-      <module name="NIA.core.domain" target="18" />
-      <module name="NIA.core.notifications" target="18" />
-      <module name="NIA.core.ui" target="18" />
+      <module name="NIA.core.network" target="18" />
     </bytecodeTargetLevel>
   </component>
 </project>

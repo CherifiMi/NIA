@@ -3,32 +3,36 @@ plugins {
     id("nowinandroid.android.library.jacoco")
     id("nowinandroid.android.hilt")
     id("kotlinx-serialization")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
-    namespace = "com.example.data"
+    buildFeatures {
+        buildConfig = true
+    }
+    namespace = "com.example.network"
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
-            isReturnDefaultValues = true
         }
     }
 }
 
-dependencies {
+secrets {
+    defaultPropertiesFileName = "secrets.defaults.properties"
+}
 
-    implementation(project(":core:analytics"))
+dependencies {
     implementation(project(":core:common"))
-    implementation(project(":core:database"))
-    implementation(project(":core:datastore"))
     implementation(project(":core:model"))
-    implementation(project(":core:network"))
-    implementation(project(":core:notifications"))
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.svg)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.datetime)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.okhttp.logging)
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.kotlin.serialization)
 
-    testImplementation(project(":core:datastore-test"))
     testImplementation(project(":core:testing"))
 }
