@@ -28,6 +28,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.datetime)
     implementation(libs.kotlinx.serialization.json)
+    implementation(project(mapOf("path" to ":core:network")))
 
     testImplementation(project(":core:datastore-test"))
     testImplementation(project(":core:testing"))

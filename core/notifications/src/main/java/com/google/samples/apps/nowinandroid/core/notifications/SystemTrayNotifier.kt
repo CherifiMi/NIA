@@ -72,7 +72,7 @@ class SystemTrayNotifier @Inject constructor(
             .map { newsResource ->
                 createNewsNotification {
                     setSmallIcon(
-                        com.google.samples.apps.nowinandroid.core.common.R.drawable.ic_nia_notification,
+                        com.example.core.common.R.drawable.ic_nia_notification,
                     )
                         .setContentTitle(newsResource.title)
                         .setContentText(newsResource.content)
@@ -89,7 +89,7 @@ class SystemTrayNotifier @Inject constructor(
             setContentTitle(title)
                 .setContentText(title)
                 .setSmallIcon(
-                    com.google.samples.apps.nowinandroid.core.common.R.drawable.ic_nia_notification,
+                    com.example.core.common.R.drawable.ic_nia_notification
                 )
                 // Build summary info into InboxStyle template.
                 .setStyle(newsNotificationStyle(truncatedNewsResources, title))
